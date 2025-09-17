@@ -1,0 +1,33 @@
+@use "variables";
+
+.pro-sidebar {
+  .pro-menu-item {
+    font-size: 140px;
+    font-weight: 500;
+    color: variables.$dark;
+    &:hover {
+      background: variables.$dark;
+      color: variables.$primary;
+    }
+  }
+
+  .pro-icon-wrapper {
+    background: transparent !important;
+  }
+}
+
+// .ps-sidebar-root .css-zjhyy9{
+//   position: relative;
+//   height: 100%;
+// }
+.ps-sidebar-root .css-zjhyy9 {
+    position: relative;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: #efefef;
+    -webkit-transition: width, left, right, 300ms;
+    transition: width, left, right, 300ms;
+    width: 250px;
+    min-width: 250px;
+    height: 100% !important;
+}

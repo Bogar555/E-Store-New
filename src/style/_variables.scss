@@ -1,0 +1,20 @@
+// Theme Colors
+$primary: #2a509a;   // Deep blue
+$secondary: #00a6a6; // Teal
+$light: #f9f9f9;
+$dark: #222;
+
+// Typography
+$font-family-base: 'Roboto', sans-serif;
+$headings-font-weight: 600;
+
+// Spacing
+$section-padding: 4rem;
+
+// Bootstrap Override
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "light": $light,
+  "dark": $dark
+);

@@ -1,0 +1,14 @@
+// Responsive text
+@use 'variables';
+
+@mixin responsive-text($min, $max) {
+  font-size: variables.$min;
+  @media (min-width: 768px) {
+    font-size: variables.$max;
+  }
+}
+
+// Section wrapper
+@mixin section-padding {
+  padding: variables.$section-padding 0;
+}

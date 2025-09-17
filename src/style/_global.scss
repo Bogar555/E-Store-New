@@ -1,0 +1,38 @@
+@use "variables";
+@use "mixins";
+
+body {
+  font-family: variables.$font-family-base;
+  background-color: variables.$light;
+  margin: 0;
+  padding-top: 0px; // prevent navbar overlap
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: variables.$headings-font-weight;
+  color: variables.$primary;
+}
+
+.section {
+  @include mixins.section-padding;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1; // takes remaining space so footer stays at bottom
+  padding-top: 57px; // offset for fixed navbar
+}
+
+footer {
+  margin-top: auto; // ensures footer sticks at bottom
+}

@@ -1,0 +1,93 @@
+// -----------------------------
+// Utility Classes
+// -----------------------------
+@use "variables";
+// Text Colors
+.text-primary-custom {
+  color: variables.$primary !important;
+}
+
+.text-secondary-custom {
+  color: variables.$secondary !important;
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, variables.$primary, variables.$secondary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Backgrounds
+.bg-gradient {
+  background: linear-gradient(120deg, variables.$primary, variables.$secondary);
+  color: white;
+}
+
+.bg-light-custom {
+  background-color: variables.$light !important;
+}
+
+.bg-dark-custom {
+  background-color: variables.$dark !important;
+  color: white;
+}
+
+// Buttons
+.btn-rounded {
+  border-radius: 50px !important;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-outline-custom {
+  border: 2px solid variables.$primary !important;
+  color: variables.$primary !important;
+  &:hover {
+    background: variables.$primary !important;
+    color: white !important;
+  }
+}
+
+// Shadows
+.shadow-sm-custom {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.shadow-lg-custom {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+// Responsive helpers
+.hide-mobile {
+  @media (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+// Spacing helpers
+.mt-section {
+  margin-top: variables.$section-padding !important;
+}
+
+.mb-section {
+  margin-bottom: variables.$section-padding !important;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

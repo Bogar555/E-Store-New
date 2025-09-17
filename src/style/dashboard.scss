@@ -1,0 +1,366 @@
+$primary: #4361ee;
+$secondary: #3f37c9;
+$success: #4cc9f0;
+$info: #4895ef;
+$warning: #f72585;
+$danger: #e63946;
+$light: #f8f9fa;
+$dark: #212529;
+$white: #ffffff;
+$card-bg: #ffffff;
+$text-primary: #2d3748;
+$text-secondary: #718096;
+$border-color: #e2e8f0;
+@mixin card-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f7fafc;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+.dashboard {
+  padding: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+  
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 4px;
+  }
+  
+  p {
+    color: $text-secondary;
+    font-size: 14px;
+    
+    a {
+      color: $primary;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: $card-bg;
+  padding: 20px;
+  @include card-shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  .stat-info {
+    h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-secondary;
+      margin-bottom: 8px;
+    }
+    
+    .stat-number {
+      font-size: 24px;
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 4px;
+    }
+    
+    .stat-change {
+      font-size: 12px;
+      font-weight: 500;
+      
+      &.positive {
+        color: #48bb78;
+      }
+      
+      &.negative {
+        color: #f56565;
+      }
+    }
+  }
+  
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    @include flex-center;    
+    &:first-child {
+      background: rgba(72, 187, 120, 0.1);
+      color: #48bb78;
+    }
+    
+    &:nth-child(2) {
+      background: rgba(245, 101, 101, 0.1);
+      color: #f56565;
+    }
+    
+    &:nth-child(3) {
+      background: rgba(66, 153, 225, 0.1);
+      color: #4299e1;
+    }
+    
+    &:last-child {
+      background: rgba(159, 122, 234, 0.1);
+      color: #9f7aea;
+    }
+    
+    i {
+      font-size: 20px;
+    }
+  }
+}
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: $text-primary;
+  }
+  
+  .view-all-btn {
+    background: transparent;
+    border: none;
+    color: $primary;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.appointment-requests {
+  background: $card-bg;
+  padding: 20px;
+  @include card-shadow;
+}
+
+.appointment-list {
+  .appointment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid $border-color;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .patient-info {
+      h4 {
+        font-size: 14px;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 4px;
+      }
+      
+      p {
+        font-size: 12px;
+        color: $text-secondary;
+      }
+    }
+    
+    .department-tag {
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 8px;
+      border-radius: 16px;      
+      &.urology {
+        background: rgba(101, 116, 205, 0.1);
+        color: #6574cd;
+      }
+      
+      &.cardiology {
+        background: rgba(245, 101, 101, 0.1);
+        color: #f56565;
+      }
+      
+      &.dermatology {
+        background: rgba(246, 173, 85, 0.1);
+        color: #f6ad55;
+      }
+      
+      &.ent {
+        background: rgba(102, 126, 234, 0.1);
+        color: #667eea;
+      }
+      
+      &.radiology {
+        background: rgba(135, 206, 250, 0.1);
+        color: #87cefa;
+      }
+    }
+  }
+}
+.patient-statistics {
+  background: $card-bg;
+  padding: 20px;
+  @include card-shadow;
+}
+
+.stats-info {
+  margin-bottom: 16px;
+  
+  p {
+    font-size: 14px;
+    color: $text-secondary;
+    margin-bottom: 8px;
+  }
+  
+  .patient-types {
+    display: flex;
+    gap: 16px;
+    
+    span {
+      font-size: 12px;
+      font-weight: 500;
+      
+      &.new-patients {
+        color: $primary;
+        
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: $primary;
+          margin-right: 4px;
+        }
+      }
+      
+      &.old-patients {
+        color: #a0aec0;
+        
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: #a0aec0;
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+}
+
+.chart-container {
+  display: flex;
+  height: 180px;
+  margin-bottom: 8px;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-right: 8px;
+  font-size: 10px;
+  color: $text-secondary;
+}
+
+.chart-bars {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex: 1;
+  
+  .bar {
+    width: 24px;
+    background: $primary;
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+  color: $text-secondary;
+  margin-bottom: 16px;
+}
+
+.stats-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  
+  .filter-btn {
+    padding: 6px 12px;
+    background: #f7fafc;
+    border: 1px solid $border-color;
+    border-radius: 16px;
+    font-size: 12px;
+    color: $text-secondary;
+    cursor: pointer;
+    
+    &.active {
+      background: $primary;
+      color: $white;
+      border-color: $primary;
+    }
+    
+    &:hover:not(.active) {
+      background: #edf2f7;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-filters {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+}
