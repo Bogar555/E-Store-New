@@ -1,15 +1,15 @@
-import React from 'react'
-import { Navigate } from 'react-router-dom'
+import React from 'react';
+import { Navigate } from 'react-router-dom';
 
 interface AuthProtectedProps {
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 const AuthProtected = ({ children }: AuthProtectedProps) => {
-  if (!sessionStorage.getItem('isLoggedIn')) {  
-    return <Navigate to={{ pathname: '/' }} />
+  if (!sessionStorage.getItem('isLoggedIn')) {
+    return <Navigate to="/" replace />;
   }
-  return <React.Fragment>{children}</React.Fragment>
-}
+  return <>{children}</>;
+};
 
-export default AuthProtected
+export default AuthProtected;

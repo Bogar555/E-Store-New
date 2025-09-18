@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./hooks/mainLayout";
-import { authProtectedRoutes } from "./routes/allRoutes";
+import { authProtectedRoutes, publicRoutes } from "./routes/allRoutes";
 import AuthProtected from "./routes/AuthProtected";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
  function App() {
 
@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
    <React.Fragment>
       <Routes>
  
-        {/* {publicRoutes.map((route, idx) => (
+       {publicRoutes.map((route, idx) => (
           <Route
             path={route.path}
             key={idx}
@@ -21,7 +21,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
               </>
             }
           />
-        ))} */}
+        ))}  
  
         {authProtectedRoutes.map((route, idx) => (
           <Route
