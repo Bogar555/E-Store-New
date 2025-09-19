@@ -1,12 +1,10 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { JSX } from "react";
 
-interface AuthProtectedProps {
-  children?: React.ReactNode;
-}
-
-const AuthProtected = ({ children }: AuthProtectedProps) => {
-  if (!sessionStorage.getItem('isLoggedIn')) {
+const AuthProtected = ({ children }: { children: React.ReactNode }) => {
+  const user = useSelector((state: any) => state.auth.user);
+  if (!user) {
     return <Navigate to="/" replace />;
   }
   return <>{children}</>;

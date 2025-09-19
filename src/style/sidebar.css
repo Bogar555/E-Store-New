@@ -1,0 +1,16 @@
+.sidebar-footer {
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout-button {
+  display: flex;
+  width: 67%;
+  height: 70%;
+  color: white;
+  background: black;
+  justify-content: center;
+  align-items: center;
+}
