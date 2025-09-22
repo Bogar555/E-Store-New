@@ -1,46 +1,43 @@
-import React from 'react';
-import { Route, Routes } from "react-router-dom";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import MainLayout from "./hooks/mainLayout";
 import { authProtectedRoutes, publicRoutes } from "./routes/allRoutes";
 import AuthProtected from "./routes/AuthProtected";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from "./components/Navbar";
 
- function App() {
-
+function App() {
   return (
-   <React.Fragment>
+    <React.Fragment>
       <Routes>
- 
-       {publicRoutes.map((route, idx) => (
+        {/* Public Routes */}
+        {publicRoutes.map((route, idx) => (
           <Route
             path={route.path}
             key={idx}
-            element={
-              <>
-                {route.component}
-              </>
-            }
+            element={route.component}
           />
-        ))}  
- 
+        ))}
+
+        {/* Protected Routes */}
         {authProtectedRoutes.map((route, idx) => (
           <Route
             path={route.path}
             key={idx}
             element={
-              <MainLayout>
-                <AuthProtected>{route.component}</AuthProtected>
-              </MainLayout>
+              <>
+                <NavigationBar />
+                <MainLayout>
+                  <AuthProtected allowedRoles={route.allowedRoles}>
+                    {route.component}
+                  </AuthProtected>
+                </MainLayout>
+              </>
             }
           />
         ))}
-
- 
       </Routes>
-
-      {/* <ToastContainer theme='dark' autoClose={1000}/> */}
     </React.Fragment>
-  // <div><h1>Hello</h1></div>
-  )
+  );
 }
- export default App;
+
+export default App;

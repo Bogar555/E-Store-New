@@ -1,6 +1,5 @@
-// store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage"; // localStorage for web
+import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import rootReducer from "../slice";
  
@@ -12,7 +11,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
  
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -21,7 +20,7 @@ const store = configureStore({
     }),
 });
 
- export default store;
+ 
 export const persistor = persistStore(store);
 
  

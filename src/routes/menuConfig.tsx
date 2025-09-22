@@ -14,10 +14,13 @@ import { MdAcUnit, MdBusiness, MdDashboard, MdPhoneIphone } from "react-icons/md
 
 export const baseMenuConfig = [
   {
+    label: "Dashboard", icon: <MdDashboard  />,
+items:[{path: "/",icon:<MdDashboard  />,label:"Dashboard"}] 
+  },
+  {
     label: "Fashion",
     icon: <GiClothes   />,
     items: [
-      { label: "Dashboard", path: "/", icon: <MdDashboard   /> },
       {
         label: "Mens",
         path: "",

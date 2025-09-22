@@ -1,0 +1,56 @@
+.nav_bar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  position: fixed;
+  width: 100%;
+}
+
+.nav_logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+/* Ensure nav items are spaced nicely */
+.navbar-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+/* Adjust Avatar on smaller screens */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav_logo {
+    height: 35px;
+  }
+
+  .nav_bar {
+    padding: 0.75rem;
+  }
+}
+
+.nav_contain {
+  background: #7f317e;
+  display: flex;
+  justify-content: space-between;
+  padding: 7.5px;
+}
+
+.nav_link {
+  text-decoration: unset;
+  color: white;
+}
+
+.nav_side {
+  position: relative;
+  width: 30%;
+}
+
+.nav_side_flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}

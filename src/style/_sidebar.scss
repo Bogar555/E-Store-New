@@ -21,13 +21,17 @@
 //   height: 100%;
 // }
 .ps-sidebar-root .css-zjhyy9 {
-    position: relative;
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-color: #efefef;
-    -webkit-transition: width, left, right, 300ms;
-    transition: width, left, right, 300ms;
-    width: 250px;
-    min-width: 250px;
-    height: 100% !important;
+  position: relative;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #efefef;
+  -webkit-transition: width, left, right, 300ms;
+  transition: width, left, right, 300ms;
+  width: 250px;
+  min-width: 250px;
+  height: 100vh !important;
+}
+
+.css-1lu8sht .ps-sidebar-container {
+  height: 100vh !important;
 }

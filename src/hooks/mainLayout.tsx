@@ -21,11 +21,11 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         style={{
           marginLeft: !isMobile ? (collapsed ? "80px" : "250px") : "0px",
           flex: 1,
-          paddingTop: "10px",
+          paddingTop: "64px",
+          overflowY:"scroll",
           transition: "all 0.3s ease-in-out",
         }}
       >
-        <NavigationBar />
         <main className="app-content" style={{ padding: "1rem" }}>
           {children}
         </main>

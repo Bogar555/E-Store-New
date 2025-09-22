@@ -9,6 +9,7 @@ import {
 } from "react-pro-sidebar";
 import { FaBars, FaSignOutAlt } from "react-icons/fa";
 import { baseMenuConfig } from "../routes/menuConfig";
+import "../style/sidebar.css";
 
 type SidebarProps = {
   collapsed: boolean;
@@ -58,10 +59,10 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
         collapsed={collapsed}
         rootStyles={{
           [`.${sidebarClasses.container}`]: {
-            backgroundColor: "#2a509a",
+            backgroundColor: "#f094efff",
             boxShadow: "2px 0 5px rgba(0,0,0,0.1)",
             transition: "width 0.3s ease",
-            color: "#fff",
+            color: "#000000ff",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -73,16 +74,16 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
           closeOnClick
           menuItemStyles={{
             button: ({ active }) => ({
-              color: "#fff",
-              backgroundColor: active ? "#d1d9e9" : "#2a509a",
+              color: "#000000ff",
+              backgroundColor: active ? "#f7bbf1ff" : "#f094efff",
               fontWeight: active ? "bold" : undefined,
               "&:hover": {
-                backgroundColor: "#093998ff",
+                backgroundColor: "#f094efff",
                 color: "#fff",
               },
             }),
             icon: {
-              color: "#fff",
+              color: "#000000ff",
             },
           }}
         >
@@ -106,14 +107,14 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
           ))}
         </Menu>
         <div className="sidebar-footer">
-          <button className="logout-button" onClick={undefined}>
+          <button className="logout-button" onClick={()=>navigate("/login")}>
             <FaSignOutAlt className="logout-icon" />
             {!collapsed && <span className="logout-text">Logout</span>}
           </button>
 
           {!collapsed && (
             <div className="organization-info">
-              <div className="copyright">© 2025 Mettler Health Tech Inc.</div>
+              <div className="copyright">© 2025 E-Store.</div>
             </div>
           )}
         </div>

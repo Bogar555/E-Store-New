@@ -1,0 +1,28 @@
+.sidebar-footer {
+  top: -11%;
+  position: relative;
+  height: 93px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logout-button {
+  display: flex;
+  width: 73%;
+  height: 48%;
+  color: white;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  margin-bottom: 22px;
+}
+
+.logout-button :hover {
+  color: black;
+  background: white;
+}
+.css-1lu8sht .ps-sidebar-container {
+  height: 100vh !important;
+}
