@@ -26,3 +26,34 @@
 .css-1lu8sht .ps-sidebar-container {
   height: 100vh !important;
 }
+.pro-sidebar .pro-menu-item {
+  font-size: 140px;
+  font-weight: 500;
+  color: var(--dark);
+}
+
+.pro-sidebar .pro-menu-item:hover {
+  background: var(--dark);
+  color: var(--primary);
+}
+
+.pro-sidebar .pro-icon-wrapper {
+  background: transparent !important;
+}
+
+/* Sidebar root styles */
+.ps-sidebar-root .css-zjhyy9 {
+  position: relative;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #efefef;
+  -webkit-transition: width, left, right, 300ms;
+  transition: width, left, right, 300ms;
+  width: 250px;
+  min-width: 250px;
+  height: 100vh !important;
+}
+
+.css-1lu8sht .ps-sidebar-container {
+  height: 100vh !important;
+}

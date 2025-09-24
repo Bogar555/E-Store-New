@@ -1,7 +1,7 @@
-import { Dashboard } from "@mui/icons-material";
 import AdminPage from "../pages/Authendication/AdminPage";
 import Login from "../pages/Authendication/login";
 import Signup from "../pages/Authendication/Signup";
+import Dashboard from "../pages/dashboard";
 
 const authProtectedRoutes = [
   { path: "/admin", component: <AdminPage />, allowedRoles: ["admin"] },

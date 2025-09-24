@@ -56,6 +56,7 @@ const Signup = () => {
         <option value="admin">Admin</option>
       </select>
       <button onClick={handleSignup}>Signup</button>
+      <button onClick={() => navigate("/login")}>Go to Login</button>
     </div>
   );
 };

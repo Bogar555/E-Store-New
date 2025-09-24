@@ -10,6 +10,7 @@ import {
 import { FaBars, FaSignOutAlt } from "react-icons/fa";
 import { baseMenuConfig } from "../routes/menuConfig";
 import "../style/sidebar.css";
+import { useState } from "react";
 
 type SidebarProps = {
   collapsed: boolean;
@@ -18,12 +19,19 @@ type SidebarProps = {
 
 export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
   const location = useLocation();
+   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const navigate = useNavigate();
   const dispatch = useDispatch<any>();
   const selectedRole = useSelector(
     (state: any) => state?.auth?.user?.data?.role
   );
-
+// const getIcon = (iconName: string) => {
+//     const IconComponent = (MuiIcons as any)[iconName];
+//     if (!IconComponent) {
+//       return <MuiIcons.HelpOutline fontSize="small" />;
+//     }
+//     return <IconComponent fontSize="small" />;
+//   };
   const menuConfig = baseMenuConfig.map((section) => ({
     ...section,
     // items: section.items.filter(
@@ -92,7 +100,10 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
           </MenuItem>
 
           {menuConfig.map((menu, idx) => (
-            <SubMenu key={idx} icon={menu.icon} label={menu.label}>
+            <SubMenu key={idx} 
+            icon={menu.icon} 
+            label={menu.label}
+            >
               {menu.items.map((item, i) => (
                 <MenuItem
                   key={i}
@@ -104,6 +115,7 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
                 </MenuItem>
               ))}
             </SubMenu>
+            
           ))}
         </Menu>
         <div className="sidebar-footer">

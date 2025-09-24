@@ -1,0 +1,135 @@
+:root {
+  --primary: #4361ee;
+  --secondary: #3f37c9;
+  --success: #4cc9f0;
+  --info: #4895ef;
+  --warning: #f72585;
+  --danger: #e63946;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --white: #ffffff;
+  --card-bg: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --border-color: #e2e8f0;
+  --Paper-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+                  0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+                  0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f7fafc;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.appointment-requests {
+  background: var(--card-bg);
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  padding: 26px;
+}
+
+.content-grid {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--Paper-shadow);
+  border-radius: 27px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.section-header .view-all-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.section-header .view-all-btn:hover {
+  text-decoration: underline;
+}
+
+.appointment-list .appointment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+  /* background: gainsboro; */
+}
+
+.appointment-list .appointment-item:last-child {
+  border-bottom: none;
+}
+
+.appointment-list .appointment-item .patient-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.appointment-list .appointment-item .patient-info p {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.appointment-list .appointment-item .department-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+
+.appointment-list .appointment-item .department-tag.urology {
+  background: rgba(101, 116, 205, 0.1);
+  color: #6574cd;
+}
+
+.appointment-list .appointment-item .department-tag.cardiology {
+  background: rgba(245, 101, 101, 0.1);
+  color: #f56565;
+}
+
+.appointment-list .appointment-item .department-tag.dermatology {
+  background: rgba(246, 173, 85, 0.1);
+  color: #f6ad55;
+}
+
+.appointment-list .appointment-item .department-tag.ent {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.appointment-list .appointment-item .department-tag.radiology {
+  background: rgba(135, 206, 250, 0.1);
+  color: #87cefa;
+}
+
+.w-full{
+    height: 90px;
+    width: 140px;
+}
