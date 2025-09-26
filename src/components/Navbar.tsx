@@ -17,7 +17,7 @@ export default function NavigationBar() {
   const dispatch = useDispatch<any>();
 
   const handleLogout = async () => {
-    navigate("/login");
+    navigate("/");
   };
 
 //   const name = localStorage.getItem("users") || "";

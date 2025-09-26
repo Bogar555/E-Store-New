@@ -119,7 +119,7 @@ export default function AppSidebar({ collapsed, setCollapsed }: SidebarProps) {
           ))}
         </Menu>
         <div className="sidebar-footer">
-          <button className="logout-button" onClick={()=>navigate("/login")}>
+          <button className="logout-button" onClick={()=>navigate("/")}>
             <FaSignOutAlt className="logout-icon" />
             {!collapsed && <span className="logout-text">Logout</span>}
           </button>
